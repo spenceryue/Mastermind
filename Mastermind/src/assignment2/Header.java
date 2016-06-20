@@ -1,7 +1,6 @@
 package assignment2;
 
-/** Replace <...> with your actual data. 
- * Spencer Yue
+/** Spencer Yue
  * sty223
  * (No partner)
  * https://github.com/spenceryue/mastermind
