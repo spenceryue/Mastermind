@@ -1,5 +1,5 @@
 package assignment2;
 
-public class Driver {
+public class Driver extends Message{
 
 }
