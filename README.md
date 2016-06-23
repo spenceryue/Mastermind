@@ -10,7 +10,7 @@ The runGame(int count) method contained within Game recursively creates new Game
 
 The Player class handles user input.
 
-The Code class handles peg sequences in the game including methods for comparison between Codes.
+The Code class handles peg sequences in the game including methods for comparison between such sequences.
 
 The Computer class generates feedback for a guess, and it generates the secret code at the start of a Game.
 
