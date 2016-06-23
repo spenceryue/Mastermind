@@ -1,5 +1,14 @@
 package assignment2;
 
+/**
+ * Spencer Yue
+ * sty223
+ * (No partner)
+ * https://github.com/spenceryue/mastermind
+ * Slip days used: <0>
+ * Summer 2016
+ */
+
 import java.util.Scanner;
 
 public class Player {
@@ -22,20 +31,21 @@ public class Player {
 	public boolean startGame() {
 		boolean asking = true;
 		while(asking) {
-			String reply = scan.next();
-			if (reply.toLowerCase().equals("y"))
+			String reply = scan.nextLine();
+			if (reply.toLowerCase().equals("y")) {
 				return ready=true;
+			}
 			else if (reply.toLowerCase().equals("n"))
 				return ready=false;
 			else
-				System.out.println("Invalid choice. Please enter either Y/N.");
+				System.out.print("Invalid choice. Please enter either Y/N: ");
 		}
+		
 		return ready;
 	}
 	
 	public boolean playAnother() {
-		if (!startGame())
-			scan.close();
+		startGame();
 		return ready;
 	}
 	

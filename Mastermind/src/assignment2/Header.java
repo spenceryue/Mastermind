@@ -1,6 +1,7 @@
 package assignment2;
 
-/** Spencer Yue
+/** 
+ * Spencer Yue
  * sty223
  * (No partner)
  * https://github.com/spenceryue/mastermind

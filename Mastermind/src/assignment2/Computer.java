@@ -1,21 +1,32 @@
 package assignment2;
 
+/**
+ * Spencer Yue
+ * sty223
+ * (No partner)
+ * https://github.com/spenceryue/mastermind
+ * Slip days used: <0>
+ * Summer 2016
+ */
+
 import java.util.ArrayList;
 import java.util.Random;
 
-public class Computer extends GameConfiguration {
-	Code secret;
-	Random generator;
+public class Computer {
+	private Code secret;
+	private Random generator;
+	private String[] colors = GameConfiguration.colors;
+	private int pegNumber = GameConfiguration.pegNumber;
 	
-	public Computer () {
+	public Computer (boolean testing) {
 		generator = new Random();
-		String[] code = new String[pegNumber];
+		StringBuffer pegs = new StringBuffer(pegNumber);
 		for (int i=0; i<pegNumber; i++) {
 			int index = generator.nextInt(colors.length);
-			code[i] = colors[index];
+			pegs.append(colors[index]);
 		}
 		
-		secret = new Code(code);
+		secret = new Code(pegs.toString());
 	}
 	
 	/**
@@ -26,17 +37,17 @@ public class Computer extends GameConfiguration {
 		int black = 0;
 		int white = 0;
 		
-		ArrayList<String> remainingGuess = new ArrayList<String>(pegNumber);
 		ArrayList<String> remainingSecret = new ArrayList<String>(pegNumber);
+		ArrayList<String> remainingGuess = new ArrayList<String>(pegNumber);
 		boolean[] comparison = c.compare(secret);
 		
 		for (int i=0; i<pegNumber; i++)
-			if (comparison[i]) {
-				remainingSecret.add(secret.getPegs()[i]);
+			if (comparison[i])
 				black++;
-			}
-			else
+			else {
+				remainingSecret.add(secret.getPegs()[i]);
 				remainingGuess.add(c.getPegs()[i]);
+			}
 		
 		for (String peg : remainingGuess)
 			for (int i=0; i<remainingSecret.size(); i++)
@@ -51,7 +62,7 @@ public class Computer extends GameConfiguration {
 	
 	/**
 	 * 
-	 * @return secret Code
+	 * @return secret Code if testing, or null if not
 	 */
 	public Code getSecret() {
 		return secret;
