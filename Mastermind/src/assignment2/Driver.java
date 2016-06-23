@@ -1,6 +1,6 @@
 package assignment2;
 
-/** Replace <...> with your actual data. 
+/**
  * Spencer Yue
  * sty223
  * (No partner)
@@ -8,3 +8,9 @@ package assignment2;
  * Slip days used: <0>
  * Summer 2016
  */
+
+public class Driver {
+	public static void main (String[] args) {
+		new Game(true).runGame(1);
+	}
+}
